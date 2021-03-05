@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+
+class Solution
+{
+public:
+    // arr[] : the input array
+    // N : size of the array arr[]
+
+    // return the length of the longest subsequene of consecutive integers
+    int findLongestConseqSubseq(int arr[], int n)
+    {
+        //Your code here
+        sort(arr, arr + n);
+        int cur, prev;
+        int max, s;
+        max = 1;
+        s = 1;
+        prev = arr[0];
+        for (int i = 1; i < n; i++)
+        {
+            cur = arr[i];
+            if ((cur - 1) == prev)
+            {
+                s++;
+            }
+            else if (cur == prev)
+            {
+            }
+            else
+            {
+                s = 1;
+            }
+            if (s > max)
+            {
+                max = s;
+            }
+            prev = cur;
+        }
+        return max;
+    }
+};
+
+// { Driver Code Starts.
+
+// Driver program
+int main()
+{
+    int t, n, i, a[100001];
+    cin >> t;
+    while (t--)
+    {
+        cin >> n;
+        for (i = 0; i < n; i++)
+            cin >> a[i];
+        Solution obj;
+        cout << obj.findLongestConseqSubseq(a, n) << endl;
+    }
+
+    return 0;
+} // } Driver Code Ends
