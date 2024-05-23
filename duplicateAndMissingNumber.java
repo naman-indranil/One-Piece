@@ -30,7 +30,7 @@ public class duplicateAndMissingNumber {
 
     }
 
-    void alternate(){
+    void alternate(int A[]){
         long n = A.length;
 
         long SN = (n*(n+1))/2;

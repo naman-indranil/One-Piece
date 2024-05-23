@@ -20,7 +20,5 @@ public class two2sum {
             }
         }
         return id;
-        Set<String> st = new HashSet<>();
-        st.
     }
 }
